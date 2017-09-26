@@ -294,7 +294,49 @@
                     </section>
                 </section>
 
-                <!-- Spring Cloud Vault Config -->
+                <!-- Spring Vault -->
+                <section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h2>Spring Vault</h2>
+                        <img src="images/spring_cloud_vault.png" class="plain">
+                        <p>
+                            <small><a href="https://projects.spring.io/spring-vault">
+                                https://projects.spring.io/spring-vault</a></small>
+                        </p>
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h2>Gradle Dependencies</h2>
+                        <pre><code class="groovy" data-trim>
+                            dependencies {
+                              compile 'org.springframework.vault:spring-vault-core:...'
+                            }
+                        </code></pre>
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h3>Configuration</h3>
+                        <pre><code class="java" data-trim>
+                            @Configuration
+                            public class VaultConfiguration
+                                extends AbstractVaultConfiguration {
+                                ...
+                                @Override
+                                public VaultEndpoint vaultEndpoint() {
+                                    return VaultEndpoint.from(vaultUri);
+                                }
+                                @Override
+                                public ClientAuthentication clientAuthentication() {
+                                    return new TokenAuthentication(token);
+                                }
+                            }
+                        </code></pre>
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h1>Demo</h1>
+                        <img src="images/demo.jpg" width="60%" class="plain">
+                    </section>
+                </section>
+
+                <!-- Spring Cloud Vault -->
                 <section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Spring Cloud Vault</h2>
@@ -322,6 +364,7 @@
                             }
                         </code></pre>
                     </section>
+
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Secret data mapping</h2>
                         <h4>bootstrap.properties</h4>
@@ -374,6 +417,10 @@
                             spring.cloud.config.token = YourVaultToken
                         </code></pre>
                     </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h1>Demo</h1>
+                        <img src="images/demo.jpg" width="60%" class="plain">
+                    </section>
                 </section>
 
                 <!-- Cloud Foundry Vault Service Broker -->
@@ -385,6 +432,10 @@
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         TODO
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h1>Demo</h1>
+                        <img src="images/demo.jpg" width="60%" class="plain">
                     </section>
                 </section>
 
