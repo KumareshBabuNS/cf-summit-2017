@@ -63,17 +63,17 @@
                     <h2>Secure Data Evolution</h2>
                     <img src="images/security_evolution.png" class="plain" width="70%">
                 </section>
-                <section data-background="images/background_normal.png" data-background-size="100%">
+                <!--<section data-background="images/background_normal.png" data-background-size="100%">
                     <img src="images/springproperties.png" class="plain">
-                </section>
+                </section>-->
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <h2>Typical sensitive data</h2>
-                    <h3 style="color: black" class="fragment fade-up">Passwords</h3>
-                    <h3 style="color: black" class="fragment fade-up">Database credentials</h3>
-                    <h3 style="color: black" class="fragment fade-up">OAuth2 client secrets</h3>
-                    <h3 style="color: black" class="fragment fade-up">Encryption keys</h3>
-                    <h3 style="color: black" class="fragment fade-up">Sensitive user data</h3>
-                    <h3 style="color: black" class="fragment fade-up">Credit card numbers</h3>
+                    <h4 class="fragment fade-up">Passwords</h4>
+                    <h4 class="fragment fade-up">Service credentials (DB, Messaging, ...)</h4>
+                    <h4 class="fragment fade-up">OAuth2 client secrets</h4>
+                    <h4 class="fragment fade-up">Encryption keys</h4>
+                    <h4 class="fragment fade-up">Credit card numbers</h4>
+                    <h4 class="fragment fade-up">Sensitive user data</h4>
                 </section>
                 <section data-background="images/background_normal.png">
                     <h2>Application Properties</h2>
@@ -93,31 +93,59 @@
 
                 <section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <h3>Introduction</h3>
-                        <img src="images/vault-black.png" class="plain">
+                        <h2>Introduction</h2>
+                        <img src="images/vault-black.png" class="plain" width="70%">
                         <a href="https://www.vaultproject.io/">https://www.vaultproject.io</a>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <h3>What is Vault?</h3>
+                        <h1>Vault</h1>
+                        <h4>A Tool for Managing Secrets like...</h4>
+                        <ul>
+                            <li>Tokens</li>
+                            <li>Passwords</li>
+                            <li>X.509 Certificates</li>
+                            <li>API keys</li>
+                            <li>DB credentials</li>
+                            <li>And other secrets...</li>
+                        </ul>
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h1>Vault</h1>
                         <blockquote cite="https://www.youtube.com/watch?v=iqigxGccezI">
                             &ldquo;A Security Swiss Army Knife&rdquo;
                         </blockquote>
                         <p>Jeff Mitchell, Vault Lead at HashiCorp</p>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <small><a href="https://www.vaultproject.io/">
-                            https://www.vaultproject.io/</a></small><br>
-                        <img src="images/hashicorp_vault.png" class="plain">
-                        <h3 class="fragment">Secret Storage</h3>
-                        <h3 class="fragment">Key Revocation</h3>
-                        <h3 class="fragment">Key Rolling</h3>
-                        <h3 class="fragment">Audit Logs</h3>
+                        <h2>Key Features</h2>
+                        <h4 class="fragment grow">Secure Secret Storage</h4>
+                        <h4 class="fragment grow">Dynamic Secrets</h4>
+                        <h4 class="fragment grow">Data Encryption (AES cypher)</h4>
+                        <h4 class="fragment grow">Leasing and Renewal</h4>
+                        <h4 class="fragment grow">Key Revocation</h4>
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h2>Key Features</h2>
+                        <h4 class="fragment grow">Audit Logs</h4>
+                        <h4 class="fragment grow">High Availability Mode (HA)</h4>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Architecture</h2>
-                        <img src="images/vault_architecture.png" class="plain">
+                        <img src="images/vault_architecture.png" class="plain" width="1500px">
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h2>Vault Storage</h2>
+                        <img src="images/vault_storage.png" class="plain">
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h2>Vault Secrets</h2>
+                        <img src="images/vault_secrets.png" class="plain">
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <h2>Vault Authentication</h2>
+                        <img src="images/vault_authentication.png" class="plain" width="80%">
+                    </section>
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h1>Secret Storage</h1>
                         <h3 class="fragment">Encryption (AES cypher)</h3>
                         <h3 class="fragment">Dynamic Secrets</h3>
@@ -127,8 +155,8 @@
                             Advanced Encryption Standard
 
                         </aside>
-                    </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    </section>-->
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Audit Logs</h2>
                         <h4 class="fragment">Not active by default</h4>
                         <h4 class="fragment">Sensitive data hashed (HMAC-SHA256)</h4>
@@ -140,20 +168,20 @@
                             ,"data":{"value":"hmac-sha256:213d0d2572fe27ffd0cd2d97cf009c2d0
                                 2e97b5af3f81b9af41f593982ffae8c"}},"error":""}
                         </code></pre>
-                    </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    </section>-->
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Authentication</h2>
                         <h3 class="fragment">Token (default)</h3>
                         <h3 class="fragment">AppId</h3>
                         <h3 class="fragment">AppRole</h3>
                         <h3 class="fragment">TLS client certificate</h3>
                         <h3 class="fragment">AWS, GitHub, ...</h3>
-                    </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    </section>-->
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h1>Rotate, Repair, Repave</h1>
                         <h4>Justin Smith (Pivotal)</h4>
-                    </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    </section>-->
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h1>Secret Backends</h1>
                         <h3>Getting dynamic credentials (with lease time)</h3>
                         <h4 class="fragment">AWS</h4>
@@ -161,11 +189,12 @@
                         <h4 class="fragment">MongoDB</h4>
                         <h4 class="fragment">Databases (MySQL, PostgreSQL, Cassandra)</h4>
                         <h4 class="fragment">RabbitMQ, and many more...</h4>
-                    </section>
+                    </section>-->
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <img src="images/vault_states.png">
+                        <h3>Vault States</h3>
+                        <img src="images/vault_states.png" class="plain" width="40%">
                     </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Start vault server</h2>
                         <pre><code class="shell" data-trim>
                             $ vault server -config=./memory.conf
@@ -187,15 +216,16 @@
                             Vault only supports memory locking on UNIX-like systems that
                             support the mlock() syscall (Linux, FreeBSD, etc).
                         </aside>
-                    </section>
+                    </section>-->
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <img src="images/key_shares.png">
+                        <h2>Vault Key Shares</h2>
+                        <img src="images/key_shares.png" class="plain">
                         <aside class="notes">
                             Vault uses a technique known as Shamir's secret sharing algorithm to split
                             the master key into 5 shares, any 3 of which are required to reconstruct the master key.
                         </aside>
                     </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Initialize vault server</h2>
                         <pre><code class="shell" data-trim>
                             $ vault init -key-shares=5 -key-threshold=2
@@ -214,8 +244,8 @@
                             Vault does not store the master key. Without at least 2 keys,
                             your vault will remain permanently sealed.
                         </code></pre>
-                    </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    </section>-->
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Unseal vault server</h2>
                         <pre><code class="shell" data-trim>
                             $ vault unseal v236b4yJQDnaJ3EmkOhycZTcxTJfMbNeILqxWfRpzGn0
@@ -233,8 +263,8 @@
                             Unseal Progress: 0
                             Unseal Nonce:
                         </code></pre>
-                    </section>
-                    <section>
+                    </section>-->
+                    <!--<section>
                         <h2>Authenticate with vault server</h2>
                         <pre><code class="shell" data-trim>
                             $ vault auth 68a80410-e315-fc39-d1ad-9864e169a47f
@@ -244,7 +274,7 @@
                             token_duration: 0
                             token_policies: [root]
                         </code></pre>
-                    </section>
+                    </section>-->
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Write and read secrets</h2>
                         <pre><code class="shell" data-trim>
@@ -262,17 +292,17 @@
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h1>Demo</h1>
-                        <img src="images/demo.jpg">
+                        <img src="images/demo.jpg" width="60%" class="plain">
                     </section>
                 </section>
 
                 <!-- Spring Cloud Vault Config -->
                 <section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <h1>Spring Cloud Vault</h1>
+                        <h2>Spring Cloud Vault</h2>
                         <img src="images/spring_cloud_vault.png" class="plain">
                         <p>
-                            <small><a style="color: black" href="https://cloud.spring.io/spring-cloud-vault">
+                            <small><a href="https://cloud.spring.io/spring-cloud-vault">
                                 https://cloud.spring.io/spring-cloud-vault</a></small>
                         </p>
                     </section>
@@ -280,24 +310,22 @@
                         <h2>Gradle Dependencies</h2>
                         <pre><code class="groovy" data-trim>
                             ext {
-                                springCloudVersion = 'Dalston.RELEASE'
+                                springCloudVersion = 'Dalston.SR3'
                             }
-
                             dependencies {
                                 compile('org.springframework.cloud:
                                             spring-cloud-starter-vault-config')
                             }
-
                             dependencyManagement {
                                 imports {
                                     mavenBom "org.springframework.cloud:
-                                            spring-cloud-dependencies:${springCloudVersion}"
+                                        spring-cloud-dependencies:${springCloudVersion}"
                                 }
                             }
                         </code></pre>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <h1>Secret data mapping</h1>
+                        <h2>Secret data mapping</h2>
                         <h4>bootstrap.properties</h4>
                         <pre><code class="properties" data-trim>
                             spring.cloud.vault.generic.application-name =
@@ -314,9 +342,6 @@
                             /secret/application/myprofile
                         </code></pre>
                     </section>
-                    <section data-background="images/demo.jpg" data-background-size="100%">
-                        <h1>Demo</h1>
-                    </section>
                     <section data-background="images/background_normal.png">
                         <h2>Rotate Database Credentials</h2>
                         <h4>bootstrap.yml</h4>
@@ -331,7 +356,11 @@
                         </code></pre>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <img src="images/springcloudconfig_vault.png">
+                        <h1>Demo</h1>
+                        <img src="images/demo.jpg" width="60%" class="plain">
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <img src="images/springcloudconfig_vault.png" class="plain">
                     </section>
                     <section data-background="images/background_normal.png">
                         <h2>Spring Cloud Config Vault Environment Repository</h2>
@@ -349,23 +378,33 @@
                     </section>
                 </section>
 
+                <!-- Cloud Foundry Vault Service Broker -->
+
+                <section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        <img src="images/cloudfoundry_vault.png" class="plain" width="70%">
+                        <a href="https://github.com/hashicorp/vault-service-broker">https://github.com/hashicorp/vault-service-broker</a>
+                    </section>
+                    <section data-background="images/background_normal.png" data-background-size="100%">
+                        TODO
+                    </section>
+                </section>
+
                 <!-- The end -->
                 <section data-background="images/background_normal.png" data-background-size="100%">
-                    <h1 style="color: red">Target Achieved?</h1>
-                    <img src="images/target.jpg">
+                    <h1>Target Achieved?</h1>
+                    <img src="images/target.jpg" class="plain" width="60%">
                 </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
-                    <h1>References</h1>
+                    <h2>References</h2>
                     <small>
                     <ul>
                         <li><a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config (https://cloud.spring.io/spring-cloud-config/)</a></li>
-                        <li><a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-config/1.3.0.RELEASE/#_security">Spring Cloud Config Security (http://cloud.spring.io/spring-cloud-static/spring-cloud-config/1.3.0.RELEASE/#_security)</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing">Shamir's secret sharing algorithm (https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing)</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing">Shamir's secret sharing (https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing)</a></li>
                         <li><a href="https://cloud.spring.io/spring-cloud-vault">Spring Cloud Vault (https://cloud.spring.io/spring-cloud-vault)</a></li>
                         <li><a href="https://www.vaultproject.io">Vault (https://www.vaultproject.io)</a></li>
-                        <li><a href="https://www.hashicorp.com/blog/cloud-foundry-vault-service-broker">Cloud Foundry Vault Service Broker (https://www.hashicorp.com/blog/cloud-foundry-vault-service-broker)</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=MvPIthr4kXA&t=1601s">Cloud Native Key Management — Justin Smith (https://www.youtube.com/watch?v=MvPIthr4kXA&t=1601s)</a></li>
-                        <li><a href="https://github.com/andifalk/distributed-secure-configuration">Sources and Presentation (https://github.com/andifalk/distributed-secure-configuration)</a></li>
+                        <li><a href="https://github.com/hashicorp/vault-service-broker">Cloud Foundry Vault Service Broker (https://github.com/hashicorp/vault-service-broker)</a></li>
+                        <li><a href="https://github.com/andifalk/cfsummit2017">Sources and Presentation (https://github.com/andifalk/cfsummit2017)</a></li>
                     </ul>
                         <p>All images used are from <a href="https://pixabay.com/">Pixabay</a> and are published under <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">Creative Commons CC0 license.</a></p>
                         All used logos are trademarks of corresponding companies
@@ -373,11 +412,9 @@
                 </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <h1>Q&A</h1>
-                    <img src="images/key.jpg">
                     <p>http://www.novatec-gmbh.de</br>
                     http://blog.novatec-gmbh.de</p>
                     <p>andreas.falk@novatec-gmbh.de</p>
-                    <img src="images/twitter.png" width="50px" class="plain">
                     <p>@NT_AQE, @andifalk</p>
                 </section>
 			</div>
