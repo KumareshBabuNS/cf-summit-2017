@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    vault:
+      token: 7419549b-7f06-73c2-8dd9-35472bb1da1e
+      scheme: http

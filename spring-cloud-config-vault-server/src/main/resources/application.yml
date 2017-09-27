@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: vault
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/andifalk/cloud-config-repository
+
+
+
+
+
