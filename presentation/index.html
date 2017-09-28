@@ -46,45 +46,47 @@
                     <img class="plain" src="images/profile.png" width="70%">
                 </section>
 
-                <section data-background="images/background_normal.png" data-background-size="100%">
+                <!--<section data-background="images/background_normal.png" data-background-size="100%">
                     <h1>Agenda</h1>
                     <h3>1.Introduction to Vault</h3>
                     <h3>2.Spring Cloud Vault</h3>
                     <h3>3.CloudFoundry: Vault Service Broker</h3>
-                </section>
+                </section>-->
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <h3>A6: Sensitive Data Exposure</h3>
                     <img src="images/owasp_top_10_2017.png" class="plain" width="35%" height="35%">
                     <p><small><a href="https://github.com/OWASP/Top10">https://github.com/OWASP/Top10</a></small></p>
                 </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
-                    <h2>Secure Data Evolution</h2>
-                    <img src="images/security_evolution.png" class="plain" width="70%">
-                </section>
-                <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                    <img src="images/springproperties.png" class="plain">
-                </section>-->
-                <section data-background="images/background_normal.png" data-background-size="100%">
-                    <h2>Typical sensitive data</h2>
+                    <h2>Typical Sensitive Data</h2>
                     <h4 class="fragment fade-up">Passwords</h4>
                     <h4 class="fragment fade-up">Service credentials (DB, Messaging, ...)</h4>
                     <h4 class="fragment fade-up">OAuth2 client secrets</h4>
                     <h4 class="fragment fade-up">Encryption keys</h4>
                     <h4 class="fragment fade-up">Credit card numbers</h4>
-                    <h4 class="fragment fade-up">Sensitive user data</h4>
+                    <h4 class="fragment fade-up">Social security numbers</h4>
+                </section>
+                <section data-background="images/background_normal.png" data-background-size="100%">
+                    <img src="images/spring_properties.png" class="plain">
                 </section>
                 <section data-background="images/background_normal.png">
-                    <h2>Application Properties</h2>
+                    <h2>Application-xxx.Yaml</h2>
                     <h4>Database access credentials</h4>
                     <pre><code class="properties" data-trim>
-                        spring.datasource.url=jdbc:postgresql://localhost/test
-                        spring.datasource.username=root
-                        spring.datasource.password=mysupersecretpassword
+                        spring:
+                            datasource:
+                                url: jdbc:postgresql://localhost/test
+                                username: root
+                                password: mysupersecretpassword
                     </code></pre>
                 </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <h1>Key Management</h1>
                     <img src="images/babuschka.jpg" class="plain" width="60%">
+                </section>
+                <section data-background="images/background_normal.png" data-background-size="100%">
+                    <h2>Agenda: Security Evolution</h2>
+                    <img src="images/security_evolution.png" class="plain" width="70%">
                 </section>
 
                 <!-- Vault -->
@@ -116,16 +118,17 @@
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Key Features</h2>
-                        <h4 class="fragment grow">Secure Secret Storage</h4>
-                        <h4 class="fragment grow">Dynamic Secrets</h4>
-                        <h4 class="fragment grow">Data Encryption (AES cypher)</h4>
-                        <h4 class="fragment grow">Leasing and Renewal</h4>
-                        <h4 class="fragment grow">Key Revocation</h4>
+                        <h4>Secure Secret Storage</h4>
+                        <h4>Dynamic Secrets</h4>
+                        <h4>Data Encryption (AES cypher)</h4>
+                        <h4>Leasing, Renewal & Revocation</h4>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Key Features</h2>
-                        <h4 class="fragment grow">Audit Logs</h4>
-                        <h4 class="fragment grow">High Availability Mode (HA)</h4>
+                        <h2>Operational Features</h2>
+                        <h4>Authentication</h4>
+                        <h4>Authorization (ACL)</h4>
+                        <h4>Audit Logs</h4>
+                        <h4>High Availability Mode (HA)</h4>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Architecture</h2>
@@ -188,10 +191,10 @@
                         <h4 class="fragment">Databases (MySQL, PostgreSQL, Cassandra)</h4>
                         <h4 class="fragment">RabbitMQ, and many more...</h4>
                     </section>-->
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h3>Vault States</h3>
                         <img src="images/vault_states.png" class="plain" width="40%">
-                    </section>
+                    </section>-->
                     <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Start vault server</h2>
                         <pre><code class="shell" data-trim>
@@ -308,15 +311,15 @@
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <img src="images/spring_vault_overview.png" class="plain">
                     </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Gradle Dependencies</h2>
                         <pre><code class="groovy" data-trim>
                             dependencies {
                               compile 'org.springframework.vault:spring-vault-core:...'
                             }
                         </code></pre>
-                    </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    </section>-->
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h3>Configuration</h3>
                         <pre><code class="java" data-trim>
                             @Configuration
@@ -333,7 +336,7 @@
                                 }
                             }
                         </code></pre>
-                    </section>
+                    </section>-->
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Demo</h2>
                         <h3>Spring Vault</h3>
