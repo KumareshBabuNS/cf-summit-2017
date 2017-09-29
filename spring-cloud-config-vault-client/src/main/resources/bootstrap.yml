@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: cfgclient
+  cloud:
+    config:
+      token: 6b8cdd70-727a-7ea5-3e8d-e34d69e7ae8d
