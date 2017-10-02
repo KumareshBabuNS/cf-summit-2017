@@ -1,7 +1,11 @@
 # cf-summit-2017
-Presentation and demos for 
+[Presentation](https://andifalk.github.io/cf-summit-2017/presentation/index.html) and demos for 
 [Manage Distributed Secrets in Applications on Cloud Foundry With Spring Cloud Vault](https://cfeu17.sched.com/event/Bity) at 
 [CloudFoundry Summit Europe 2017](https://www.cloudfoundry.org/event/europe-2017).
+
+## Presentation
+
+The presentation for this session can be found [here](https://andifalk.github.io/cf-summit-2017/presentation/index.html).
 
 ## Spring Vault Demo
 
