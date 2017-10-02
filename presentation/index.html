@@ -37,7 +37,8 @@
                         <br><br>
                         <h4 style="color: white">Manage Distributed Secrets in Applications on Cloud Foundry With Spring Cloud Vault</h4>
                         <p>Andreas Falk</p>
-                        <p>12 October 2017 - 15:50 - 16:20</p>
+                        <p>12 October 2017</p>
+                        <p><a style="color: #1c1e20" href="https://github.com/andifalk/cfsummit2017">Sources and Presentation: https://github.com/andifalk/cfsummit2017</a></p>
                     </div>
                 </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
@@ -69,7 +70,7 @@
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <img src="images/spring_properties.png" class="plain">
                 </section>
-                <section data-background="images/background_normal.png">
+                <section data-background="images/background_normal.png" data-background-size="100%">
                     <h2>Application-xxx.Yaml</h2>
                     <h4>Database access credentials</h4>
                     <pre><code class="properties" data-trim>
@@ -146,17 +147,6 @@
                         <h2>Vault Authentication</h2>
                         <img src="images/vault_authentication.png" class="plain" width="80%">
                     </section>
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h1>Secret Storage</h1>
-                        <h3 class="fragment">Encryption (AES cypher)</h3>
-                        <h3 class="fragment">Dynamic Secrets</h3>
-                        <h3 class="fragment">Access control policies</h3>
-                        <h3 class="fragment">Lease time (automatic revocation)</h3>
-                        <aside class="notes">
-                            Advanced Encryption Standard
-
-                        </aside>
-                    </section>-->
                     <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Audit Logs</h2>
                         <h4 class="fragment">Not active by default</h4>
@@ -291,11 +281,11 @@
                             hello           	world
                         </code></pre>
                     </section>-->
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Demo</h2>
                         <h3>Vault</h3>
                         <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>
+                    </section>-->
                 </section>
 
                 <!-- Spring Vault -->
@@ -342,11 +332,11 @@
                             }
                         </code></pre>
                     </section>-->
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Demo</h2>
                         <h3>Spring Vault</h3>
                         <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>
+                    </section>-->
                 </section>
 
                 <!-- Spring Cloud Vault -->
@@ -360,6 +350,9 @@
                         </p>
                     </section>
                     <section data-background="images/background_normal.png" data-background-size="100%">
+                        <img src="images/springcloud_vault.png" class="plain">
+                    </section>
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Gradle Dependencies</h2>
                         <pre><code class="groovy" data-trim>
                             ext {
@@ -376,10 +369,10 @@
                                 }
                             }
                         </code></pre>
-                    </section>
+                    </section>-->
 
                     <section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Secret data mapping</h2>
+                        <h2>Secret vault mapping</h2>
                         <h4>bootstrap.properties</h4>
                         <pre><code class="properties" data-trim>
                             spring.cloud.vault.generic.application-name =
@@ -396,7 +389,7 @@
                             /secret/application/myprofile
                         </code></pre>
                     </section>
-                    <section data-background="images/background_normal.png">
+                    <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Rotate Database Credentials</h2>
                         <h4>bootstrap.yml</h4>
                         <pre><code class="yaml" data-trim>
@@ -412,11 +405,11 @@
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <img src="images/springcloudconfig_vault.png" class="plain">
                     </section>
-                    <section data-background="images/background_normal.png">
+                    <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Spring Cloud Config Vault Environment Repository</h2>
                         <h4>application.properties (Config Server)</h4>
                         <pre><code class="properties" data-trim>
-                            spring.profiles.active=vault
+                            spring.profiles.active=git,vault
                             spring.cloud.config.server.vault.host=127.0.0.1
                             spring.cloud.config.server.vault.port=8200
                             spring.cloud.config.server.vault.scheme=https
@@ -426,11 +419,11 @@
                             spring.cloud.config.token = YourVaultToken
                         </code></pre>
                     </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Demo</h2>
                         <h3>Spring Cloud Vault</h3>
                         <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>
+                    </section>-->
                 </section>
 
                 <!-- Cloud Foundry Vault Service Broker -->
@@ -440,14 +433,14 @@
                         <img src="images/cloudfoundry_vault.png" class="plain" width="70%">
                         <a href="https://github.com/hashicorp/vault-service-broker">https://github.com/hashicorp/vault-service-broker</a>
                     </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         TODO
-                    </section>
-                    <section data-background="images/background_normal.png" data-background-size="100%">
+                    </section>-->
+                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Demo</h2>
                         <h3>CloudFoundry & Vault</h3>
                         <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>
+                    </section>-->
                 </section>
 
                 <!-- The end -->
