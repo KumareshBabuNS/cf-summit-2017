@@ -1,6 +1,6 @@
 spring:
   cloud:
       vault:
-        token: 6b8cdd70-727a-7ea5-3e8d-e34d69e7ae8d
+        token: 0523ad27-cfb9-aa52-27af-4a69b9d90f0d
         scheme: http
 

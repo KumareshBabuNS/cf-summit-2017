@@ -1,6 +1,6 @@
 vault:
   uri: http://localhost:8200
-  token: c2b9fcd7-14b3-1639-0e45-0b5b7ab32352
+  token: 0523ad27-cfb9-aa52-27af-4a69b9d90f0d
 
 spring:
   h2:

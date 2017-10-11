@@ -33,7 +33,11 @@ public class PersonService {
     }
 
     public List<Person> findAll() {
-        return personRepository.findAll().stream().map(this::decryptSensibleData).collect(Collectors.toList());
+        return personRepository
+                .findAll()
+                .stream()
+                .map(this::decryptSensibleData)
+                .collect(Collectors.toList());
     }
 
     public List<Person> findAllEncrypted() {
@@ -61,11 +65,13 @@ public class PersonService {
     private void encryptSensibleData(Person person) {
         try {
             person.setSocialSecurityNumber(
-                    vaultOperations.opsForTransit().encrypt(KeyNames.KEY_SSN, Base64.getEncoder().encodeToString(
-                            person.getSocialSecurityNumber().getBytes("UTF-8"))));
+                    vaultOperations.opsForTransit().encrypt(KeyNames.KEY_SSN,
+                            Base64.getEncoder().encodeToString(
+                                    person.getSocialSecurityNumber().getBytes("UTF-8"))));
             person.setCreditCardNumber(
-                    vaultOperations.opsForTransit().encrypt(KeyNames.KEY_CREDIT_CARD, Base64.getEncoder().encodeToString(
-                            person.getCreditCardNumber().getBytes("UTF-8"))));
+                    vaultOperations.opsForTransit().encrypt(KeyNames.KEY_CREDIT_CARD,
+                            Base64.getEncoder().encodeToString(
+                                    person.getCreditCardNumber().getBytes("UTF-8"))));
         } catch (UnsupportedEncodingException e) {
             LOG.error("Error when encrypting data", e);
         }
@@ -76,13 +82,13 @@ public class PersonService {
             person.setSocialSecurityNumber(
                     new String(
                         Base64.getDecoder().decode(
-                            vaultOperations.opsForTransit().decrypt(KeyNames.KEY_SSN, person.getSocialSecurityNumber())),
-                            "UTF-8"));
+                            vaultOperations.opsForTransit().decrypt(KeyNames.KEY_SSN,
+                                    person.getSocialSecurityNumber())), "UTF-8"));
             person.setCreditCardNumber(
                     new String(
                             Base64.getDecoder().decode(
-                                    vaultOperations.opsForTransit().decrypt(KeyNames.KEY_CREDIT_CARD, person.getCreditCardNumber())),
-                            "UTF-8"));
+                                    vaultOperations.opsForTransit().decrypt(KeyNames.KEY_CREDIT_CARD,
+                                            person.getCreditCardNumber())), "UTF-8"));
         } catch (UnsupportedEncodingException e) {
             LOG.error("Error when encrypting data", e);
         }
