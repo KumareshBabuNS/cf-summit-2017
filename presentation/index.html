@@ -38,7 +38,7 @@
                         <h4 style="color: white">Manage Distributed Secrets in Applications on Cloud Foundry With Spring Cloud Vault</h4>
                         <p>Andreas Falk</p>
                         <p>12 October 2017</p>
-                        <p><a style="color: #1c1e20" href="https://github.com/andifalk/cfsummit2017">Sources and Presentation: https://github.com/andifalk/cfsummit2017</a></p>
+                        <p><a style="color: #1c1e20" href="https://github.com/andifalk/cf-summit-2017">Sources and Presentation: https://github.com/andifalk/cf-summit-2017</a></p>
                     </div>
                 </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
@@ -46,17 +46,21 @@
                     NovaTec Consulting GmbH (Stuttgart/Germany)<br>
                     <img class="plain" src="images/profile.png" width="70%">
                 </section>
-
-                <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                    <h1>Agenda</h1>
-                    <h3>1.Introduction to Vault</h3>
-                    <h3>2.Spring Cloud Vault</h3>
-                    <h3>3.CloudFoundry: Vault Service Broker</h3>
-                </section>-->
+                <section data-background="images/background_normal.png" data-background-size="100%">
+                    <h4 style="color: darkgreen">Authentication (OAuth2/OIDC): OK!</h4>
+                    <h4 style="color: darkgreen">Authorization: OK!</h4>
+                    <img src="images/castle.jpg" class="plain" width="60%">
+                    <h2 style="color: red">What about sensitive data?</h2>
+                </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <h3>A6: Sensitive Data Exposure</h3>
                     <img src="images/owasp_top_10_2017.png" class="plain" width="35%" height="35%">
                     <p><small><a href="https://github.com/OWASP/Top10">https://github.com/OWASP/Top10</a></small></p>
+                </section>
+                <section data-background="images/background_normal.png" data-background-size="100%">
+                    <h2><a href="http://www.eugdpr.org">EU General Data Protection Regulation (GDPR)</a></h2>
+                    <h4>Privacy by Design</h4>
+                    <h4>Breach Notification</h4>
                 </section>
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <h2>Typical Sensitive Data</h2>
@@ -147,67 +151,6 @@
                         <h2>Vault Authentication</h2>
                         <img src="images/vault_authentication.png" class="plain" width="80%">
                     </section>
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Audit Logs</h2>
-                        <h4 class="fragment">Not active by default</h4>
-                        <h4 class="fragment">Sensitive data hashed (HMAC-SHA256)</h4>
-                        <h4 class="fragment">Targets: File, Syslog, Socket</h4>
-                        <pre><code class="text" data-trim>
-                            ...
-                            ,"path":"secret/hello","data":null,"remote_address":"127.0.0.1"
-                            ,"wrap_ttl":0,"headers":{}},"response":{"secret":{"lease_id":""}
-                            ,"data":{"value":"hmac-sha256:213d0d2572fe27ffd0cd2d97cf009c2d0
-                                2e97b5af3f81b9af41f593982ffae8c"}},"error":""}
-                        </code></pre>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Authentication</h2>
-                        <h3 class="fragment">Token (default)</h3>
-                        <h3 class="fragment">AppId</h3>
-                        <h3 class="fragment">AppRole</h3>
-                        <h3 class="fragment">TLS client certificate</h3>
-                        <h3 class="fragment">AWS, GitHub, ...</h3>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h1>Rotate, Repair, Repave</h1>
-                        <h4>Justin Smith (Pivotal)</h4>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h1>Secret Backends</h1>
-                        <h3>Getting dynamic credentials (with lease time)</h3>
-                        <h4 class="fragment">AWS</h4>
-                        <h4 class="fragment">Consul</h4>
-                        <h4 class="fragment">MongoDB</h4>
-                        <h4 class="fragment">Databases (MySQL, PostgreSQL, Cassandra)</h4>
-                        <h4 class="fragment">RabbitMQ, and many more...</h4>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h3>Vault States</h3>
-                        <img src="images/vault_states.png" class="plain" width="40%">
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Start vault server</h2>
-                        <pre><code class="shell" data-trim>
-                            $ vault server -config=./memory.conf
-                        </code></pre>
-                        <p>memory.conf</p>
-                        <pre><code class="json" data-trim>
-                            storage "inmem" {
-                            }
-                            listener "tcp" {
-                                address     = "127.0.0.1:8200"
-                                tls_disable = 1
-                            }
-                            disable_mlock = true
-                        </code></pre>
-                        <aside class="notes">
-                            disable_mlock (bool: false) –
-                            Disables the server from executing the mlock syscall.
-                            mlock prevents memory from being swapped to disk.
-                            Vault only supports memory locking on UNIX-like systems that
-                            support the mlock() syscall (Linux, FreeBSD, etc).
-                        </aside>
-                    </section>-->
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Vault Key Shares</h2>
                         <img src="images/key_shares.png" class="plain">
@@ -216,76 +159,6 @@
                             the master key into 5 shares, any 3 of which are required to reconstruct the master key.
                         </aside>
                     </section>
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Initialize vault server</h2>
-                        <pre><code class="shell" data-trim>
-                            $ vault init -key-shares=5 -key-threshold=2
-
-                            Unseal Key 1: v236b4yJQDnaJ3EmkOhycZTcxTJfMbNeILqxWfRpzGn0
-                            Unseal Key 2: g1tV/d4vp7VVbOu93aHrHZt41xE5YtX7yYBsFMIXGHCf
-                            Unseal Key 3: rAI5FwrVF8XFUD7BOtTer9bL4A39HxHhnXQo85uSyphf
-                            Unseal Key 4: kDSWhVhz8ElKG6Rad51Hw9lv8i6bTHdEdE71vq3sHoE0
-                            Unseal Key 5: 4KUY7CS+UBi5lxlwpCRY+sWXdPFDp68rX2F6bTxT0nHF
-                            Initial Root Token: 68a80410-e315-fc39-d1ad-9864e169a47f
-
-                            Please securely distribute the above keys. When the vault is
-                            re-sealed, restarted, or stopped, you must provide at least 2
-                            of these keys to unseal it again.
-
-                            Vault does not store the master key. Without at least 2 keys,
-                            your vault will remain permanently sealed.
-                        </code></pre>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Unseal vault server</h2>
-                        <pre><code class="shell" data-trim>
-                            $ vault unseal v236b4yJQDnaJ3EmkOhycZTcxTJfMbNeILqxWfRpzGn0
-
-                            Sealed: true
-                            Key Shares: 5
-                            Key Threshold: 2
-                            Unseal Progress: 1
-                            Unseal Nonce: 3a7f80b8-9aa4-2338-8a0a-0295331962d7
-
-                            $ vault unseal rAI5FwrVF8XFUD7BOtTer9bL4A39HxHhnXQo85uSyphf
-                            Sealed: false
-                            Key Shares: 5
-                            Key Threshold: 2
-                            Unseal Progress: 0
-                            Unseal Nonce:
-                        </code></pre>
-                    </section>-->
-                    <!--<section>
-                        <h2>Authenticate with vault server</h2>
-                        <pre><code class="shell" data-trim>
-                            $ vault auth 68a80410-e315-fc39-d1ad-9864e169a47f
-
-                            Successfully authenticated! You are now logged in.
-                            token: 68a80410-e315-fc39-d1ad-9864e169a47f
-                            token_duration: 0
-                            token_policies: [root]
-                        </code></pre>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Write and read secrets</h2>
-                        <pre><code class="shell" data-trim>
-                            $ vault write secret/mysecret hello=world
-
-                            Success! Data written to: secret/mysecret
-
-                            $ vault read secret/mysecret
-
-                            Key             	Value
-                            -&#45;&#45;             	-&#45;&#45;&#45;&#45;
-                            refresh_interval	768h0m0s
-                            hello           	world
-                        </code></pre>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Demo</h2>
-                        <h3>Vault</h3>
-                        <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>-->
                 </section>
 
                 <!-- Spring Vault -->
@@ -306,37 +179,6 @@
                         <h2>Encryption as a service</h2>
                         <img src="images/spring_vault_transit.png" class="plain">
                     </section>
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Gradle Dependencies</h2>
-                        <pre><code class="groovy" data-trim>
-                            dependencies {
-                              compile 'org.springframework.vault:spring-vault-core:...'
-                            }
-                        </code></pre>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h3>Configuration</h3>
-                        <pre><code class="java" data-trim>
-                            @Configuration
-                            public class VaultConfiguration
-                                extends AbstractVaultConfiguration {
-                                ...
-                                @Override
-                                public VaultEndpoint vaultEndpoint() {
-                                    return VaultEndpoint.from(vaultUri);
-                                }
-                                @Override
-                                public ClientAuthentication clientAuthentication() {
-                                    return new TokenAuthentication(token);
-                                }
-                            }
-                        </code></pre>
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Demo</h2>
-                        <h3>Spring Vault</h3>
-                        <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>-->
                 </section>
 
                 <!-- Spring Cloud Vault -->
@@ -352,24 +194,6 @@
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <img src="images/springcloud_vault.png" class="plain">
                     </section>
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Gradle Dependencies</h2>
-                        <pre><code class="groovy" data-trim>
-                            ext {
-                                springCloudVersion = 'Dalston.SR3'
-                            }
-                            dependencies {
-                                compile('org.springframework.cloud:
-                                            spring-cloud-starter-vault-config')
-                            }
-                            dependencyManagement {
-                                imports {
-                                    mavenBom "org.springframework.cloud:
-                                        spring-cloud-dependencies:${springCloudVersion}"
-                                }
-                            }
-                        </code></pre>
-                    </section>-->
 
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <h2>Secret vault mapping</h2>
@@ -419,11 +243,6 @@
                             spring.cloud.config.token = YourVaultToken
                         </code></pre>
                     </section>
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Demo</h2>
-                        <h3>Spring Cloud Vault</h3>
-                        <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>-->
                 </section>
 
                 <!-- Cloud Foundry Vault Service Broker -->
@@ -432,43 +251,33 @@
                     <section data-background="images/background_normal.png" data-background-size="100%">
                         <img src="images/cloudfoundry_vault.png" class="plain" width="70%">
                         <a href="https://github.com/hashicorp/vault-service-broker">https://github.com/hashicorp/vault-service-broker</a>
+                        <a href="https://github.com/pivotal-cf/spring-cloud-vault-connector">https://github.com/pivotal-cf/spring-cloud-vault-connector</a>
                     </section>
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        TODO
-                    </section>-->
-                    <!--<section data-background="images/background_normal.png" data-background-size="100%">
-                        <h2>Demo</h2>
-                        <h3>CloudFoundry & Vault</h3>
-                        <img src="images/demo.jpg" width="60%" class="plain">
-                    </section>-->
                 </section>
 
                 <!-- The end -->
-                <section data-background="images/background_normal.png" data-background-size="100%">
-                    <h1>Target Achieved?</h1>
-                    <img src="images/target.jpg" class="plain" width="60%">
-                </section>
-                <section data-background="images/background_normal.png" data-background-size="100%">
-                    <h2>References</h2>
-                    <small>
-                    <ul>
-                        <li><a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config (https://cloud.spring.io/spring-cloud-config/)</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing">Shamir's secret sharing (https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing)</a></li>
-                        <li><a href="https://cloud.spring.io/spring-cloud-vault">Spring Cloud Vault (https://cloud.spring.io/spring-cloud-vault)</a></li>
-                        <li><a href="https://www.vaultproject.io">Vault (https://www.vaultproject.io)</a></li>
-                        <li><a href="https://github.com/hashicorp/vault-service-broker">Cloud Foundry Vault Service Broker (https://github.com/hashicorp/vault-service-broker)</a></li>
-                        <li><a href="https://github.com/andifalk/cfsummit2017">Sources and Presentation (https://github.com/andifalk/cfsummit2017)</a></li>
-                    </ul>
-                        <p>All images used are from <a href="https://pixabay.com/">Pixabay</a> and are published under <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">Creative Commons CC0 license.</a></p>
-                        All used logos are trademarks of corresponding companies
-                    </small>
-                </section>
+
                 <section data-background="images/background_normal.png" data-background-size="100%">
                     <h1>Q&A</h1>
                     <p>http://www.novatec-gmbh.de</br>
                     http://blog.novatec-gmbh.de</p>
                     <p>andreas.falk@novatec-gmbh.de</p>
                     <p>@NT_AQE, @andifalk</p>
+                </section>
+                <section data-background="images/background_normal.png" data-background-size="100%">
+                    <h2>References</h2>
+                    <small>
+                        <ul>
+                            <li><a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config (https://cloud.spring.io/spring-cloud-config/)</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing">Shamir's secret sharing (https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing)</a></li>
+                            <li><a href="https://cloud.spring.io/spring-cloud-vault">Spring Cloud Vault (https://cloud.spring.io/spring-cloud-vault)</a></li>
+                            <li><a href="https://www.vaultproject.io">Vault (https://www.vaultproject.io)</a></li>
+                            <li><a href="https://github.com/hashicorp/vault-service-broker">Cloud Foundry Vault Service Broker (https://github.com/hashicorp/vault-service-broker)</a></li>
+                            <li><a href="https://github.com/andifalk/cf-summit-2017">Sources and Presentation (https://github.com/andifalk/cfsummit2017)</a></li>
+                        </ul>
+                        <p>All images used are from <a href="https://pixabay.com/">Pixabay</a> and are published under <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">Creative Commons CC0 license.</a></p>
+                        All used logos are trademarks of corresponding companies
+                    </small>
                 </section>
 			</div>
 		</div>
