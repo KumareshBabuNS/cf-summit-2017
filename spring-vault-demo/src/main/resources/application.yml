@@ -1,6 +1,6 @@
 vault:
   uri: http://localhost:8200
-  token: 0523ad27-cfb9-aa52-27af-4a69b9d90f0d
+  token: myroot
 
 spring:
   h2:
